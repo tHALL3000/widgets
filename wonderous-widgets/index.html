@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderous Widgets</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="page">
+        <header class="header">
+            <h1 class="header__title">✨ Wonderous Widgets</h1>
+            <p class="header__subtitle">Your collection of embeddable iframe widgets</p>
+        </header>
+        
+        <div class="widget-grid">
+            <!-- Widget containers will be added here -->
+            <div class="widget">
+                <div class="widget__header">
+                    <div class="widget__title">Coming Soon...</div>
+                    <div class="widget__description">Your first widget will appear here</div>
+                </div>
+                <div class="widget__frame" style="height: 200px;">
+                    <div class="widget__placeholder">
+                        Widget iframe will be embedded here
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <button class="btn btn--primary" onclick="showAddInstructions()">
+            + Add New Widget
+        </button>
+        
+        <footer class="footer">
+            <p>Ready to embed your widgets as iframes • Built with 🦄 by tHALL3000</p>
+        </footer>
+    </div>
+
+    <script>
+        function showAddInstructions() {
+            alert(`To add a new widget:
+
+1. Create your widget as a separate HTML file
+2. Add a new widget container to the grid
+3. Embed it using: <iframe src="your-widget.html" width="100%" height="300"></iframe>
+
+Example structure:
+<div class="widget">
+    <div class="widget__header">
+        <div class="widget__title">Widget Name</div>
+        <div class="widget__description">Widget description</div>
+    </div>
+    <iframe src="widgets/your-widget.html" class="widget__frame" height="300"></iframe>
+</div>`);
+        }
+    </script>
+</body>
+</html>
