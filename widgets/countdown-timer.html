@@ -374,6 +374,8 @@
 						timerTitle.classList.add(
 							"state-warning"
 						);
+						timerTitle.textContent =
+							"Review next steps";
 					} else {
 						timerDisplay.classList.add(
 							"state-normal"
@@ -381,9 +383,9 @@
 						timerTitle.classList.add(
 							"state-normal"
 						);
+						timerTitle.textContent =
+							"Time left in this meeting";
 					}
-					timerTitle.textContent =
-						"Time left in this meeting";
 					isOvertime = false;
 				} else {
 					// Overtime mode
