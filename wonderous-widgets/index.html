@@ -1,45 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wonderous Widgets</title>
-    <link rel="stylesheet" href="styles/main.css">
-</head>
-<body>
-    <div class="page">
-        <header class="header">
-            <h1 class="header__title">✨ Wonderous Widgets</h1>
-            <p class="header__subtitle">Your collection of embeddable iframe widgets</p>
-        </header>
-        
-        <div class="widget-grid">
-            <!-- Widget containers will be added here -->
-            <div class="widget">
-                <div class="widget__header">
-                    <div class="widget__title">Coming Soon...</div>
-                    <div class="widget__description">Your first widget will appear here</div>
-                </div>
-                <div class="widget__frame" style="height: 200px;">
-                    <div class="widget__placeholder">
-                        Widget iframe will be embedded here
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <button class="btn btn--primary" onclick="showAddInstructions()">
-            + Add New Widget
-        </button>
-        
-        <footer class="footer">
-            <p>Ready to embed your widgets as iframes • Built with 🦄 by tHALL3000</p>
-        </footer>
-    </div>
+	<head>
+		<meta
+			charset="UTF-8"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>
+			Wonderous
+			Widgets
+		</title>
+		<link
+			rel="stylesheet"
+			href="styles/main.css"
+		/>
+	</head>
+	<body>
+		<div
+			class="page"
+		>
+			<header
+				class="header"
+			>
+				<h1
+					class="header__title"
+				>
+					✨
+					Wonderous
+					Widgets
+				</h1>
+				<p
+					class="header__subtitle"
+				>
+					Your
+					collection
+					of
+					embeddable
+					iframe
+					widgets
+				</p>
+			</header>
 
-    <script>
-        function showAddInstructions() {
-            alert(`To add a new widget:
+			<div
+				class="widget-grid"
+			>
+				<div
+					class="widget"
+				>
+					<div
+						class="widget__header"
+					>
+						<div
+							class="widget__title"
+						>
+							Meeting
+							Countdown
+							Timer
+						</div>
+						<div
+							class="widget__description"
+						>
+							Countdown
+							timer
+							that
+							warns
+							at
+							5
+							minutes
+							and
+							tracks
+							overtime
+						</div>
+					</div>
+					<iframe
+						src="widgets/countdown-timer.html"
+						class="widget__frame"
+						height="350"
+					></iframe>
+
+					<div
+						class="widget__embed-label"
+					>
+						📋
+						Embed
+						Code:
+					</div>
+					<div
+						class="widget__embed-code"
+					>
+						<button
+							class="copy-btn"
+							onclick="copyEmbedCode(this)"
+						>
+							Copy</button
+						><iframe
+							src="https://tHALL3000.github.io/widgets/countdown-timer.html"
+							width="400"
+							height="350"
+							frameborder="0"
+						></iframe>
+					</div>
+				</div>
+			</div>
+
+			<button
+				class="btn btn--primary"
+				onclick="showAddInstructions()"
+			>
+				+
+				Add
+				New
+				Widget
+			</button>
+
+			<footer
+				class="footer"
+			>
+				<p>
+					Ready
+					to
+					embed
+					your
+					widgets
+					as
+					iframes
+					•
+					Built
+					with
+					🦄
+					by
+					tHALL3000
+				</p>
+			</footer>
+		</div>
+
+		<script>
+			function copyEmbedCode(
+				button
+			) {
+				const codeBlock =
+					button.parentElement;
+				const text =
+					codeBlock.textContent
+						.replace(
+							"Copy",
+							""
+						)
+						.trim();
+
+				navigator.clipboard
+					.writeText(
+						text
+					)
+					.then(
+						() => {
+							button.textContent =
+								"Copied!";
+							setTimeout(
+								() => {
+									button.textContent =
+										"Copy";
+								},
+								2000
+							);
+						}
+					);
+			}
+			function showAddInstructions() {
+				alert(`To add a new widget:
 
 1. Create your widget as a separate HTML file
 2. Add a new widget container to the grid
@@ -53,7 +183,7 @@ Example structure:
     </div>
     <iframe src="widgets/your-widget.html" class="widget__frame" height="300"></iframe>
 </div>`);
-        }
-    </script>
-</body>
+			}
+		</script>
+	</body>
 </html>
