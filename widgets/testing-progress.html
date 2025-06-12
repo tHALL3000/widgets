@@ -284,24 +284,8 @@
                 if (!this.autoSyncEnabled) return; // Skip if manual override is active
                 
                 try {
-                    console.log('Attempting to fetch from Google Drive...');
-                    
-                    // Try the public API endpoint instead
-                    const fileId = '1f-tUBkV0__PIavhKCFY5MCU6pJyx-iRd';
-                    const apiUrl = `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&key=AIzaSyC7bF1fJ1QkRzL9w8mJ9K7_8QqQ_5A7K8M`;
-                    
-                    console.log('Trying API URL...');
-                    const response = await fetch(apiUrl, {
-                        method: 'GET',
-                        mode: 'cors'
-                    });
-                    
-                    if (!response.ok) {
-                        // Fallback: try with JSONP approach
-                        console.log('API failed, trying alternative method...');
-                        await this.fetchWithJSONP();
-                        return;
-                    }
+                    console.log('Attempting to fetch from GitHub...');
+                    const response = await fetch('https://raw.githubusercontent.com/tHALL3000/widgets/main/progress.json?' + Date.now());
                     
                     const data = await response.json();
                     console.log('Successfully fetched data:', data);
