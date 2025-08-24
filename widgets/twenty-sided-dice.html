@@ -247,52 +247,10 @@
 				}
 			}
 
-			#diceResult {
-				position: absolute;
-				bottom: 20px;
-				left: 50%;
-				transform: translateX(
-					-50%
-				);
-				background: linear-gradient(
-					45deg,
-					#e74c3c,
-					#c0392b
-				);
-				color: white;
-				font-weight: bold;
-				padding: 12px
-					24px;
-				border-radius: 25px;
-				box-shadow: 0
-					4px
-					15px
-					rgba(
-						0,
-						0,
-						0,
-						0.3
-					);
-				font-size: 18px;
-				text-align: center;
-				min-width: 200px;
-			}
 
-			#diceResult.hide {
-				opacity: 0;
-				transform: translateX(
-						-50%
-					)
-					translateY(
-						20px
-					);
-			}
+		
 
-			#diceResult.reveal {
-				animation: fadeUp
-					0.5s
-					forwards;
-			}
+			
 
 			@keyframes fadeUp {
 				0% {
@@ -710,10 +668,7 @@
 							result;
 
 						// Show result with appropriate message
-						let message =
-							getResultMessage(
-								result
-							);
+						
 						outputDiv.innerHTML =
 							message;
 						outputDiv.classList.add(
