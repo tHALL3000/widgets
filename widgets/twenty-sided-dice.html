@@ -730,34 +730,6 @@
 				);
 			}
 
-			function getResultMessage(
-				result
-			) {
-				if (
-					result ===
-					20
-				) {
-					return `🎉 NATURAL 20! 🎉<br>Critical Success!`;
-				} else if (
-					result ===
-					1
-				) {
-					return `💀 NATURAL 1! 💀<br>Critical Failure!`;
-				} else if (
-					result >=
-					15
-				) {
-					return `⭐ You rolled ${result}! ⭐<br>Great roll!`;
-				} else if (
-					result >=
-					10
-				) {
-					return `✨ You rolled ${result} ✨<br>Good roll!`;
-				} else {
-					return `🎲 You rolled ${result} 🎲`;
-				}
-			}
-
 			dice.addEventListener(
 				"click",
 				rollDice
